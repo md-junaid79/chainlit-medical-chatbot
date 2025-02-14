@@ -3,6 +3,7 @@ import chainlit as cl
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
+from chainlit import AskUserMessage, Message, on_chat_start
 
 # Load environment variables from .env file
 load_dotenv()
@@ -14,10 +15,19 @@ if not gemini_api_key:
 genai.configure(api_key=gemini_api_key)
 
 model = genai.GenerativeModel("gemini-2.0-flash")
-# Optionally, start a chat session if your usage requires maintaining conversation history
 chat = model.start_chat(history=[])
 
+# @cl.on_chat_start
+# async def start():
+#     await cl.Message(content="""Hello and welcome to your Confidential Medical Chatbot.
 
+# I'm designed to be a private and helpful space to explore your medical questions and concerns.  Your privacy is important.
+
+# **Please be aware:**  This chatbot is an AI tool for information and should **not replace consultations with your medical provider.**  They are essential for your personal healthcare.
+
+# I can help you understand medical topics, explore symptoms (for informational purposes), and find resources.  What medical questions can I help you with in a confidential manner today?""").send()
+
+@cl.on_message
 async def main(message: cl.Message):
     # Build a prompt that instructs the model to act as a helpful medical assistant
     prompt = (

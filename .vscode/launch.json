@@ -11,7 +11,10 @@
             "program": "C:\\Users\\junaid\\miniconda3\\Scripts\\chainlit.exe",
             "console": "integratedTerminal",
             "args": [
-                "run"
+                "run",
+                "app.py", // Add your target script here
+                "--port",
+                "8080"
             ],
             "env": {
                 "PYTHONUNBUFFERED": "1"
