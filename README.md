@@ -1,7 +1,7 @@
 # CyberHeal
 ## a medical chatbot implemented using chainlit
 
-![CyberHeal Logo](https://github.com/md-junaid79/chainlit-medical-chatbot/blob/main/gamma.jpg?raw=true)
+![CyberHeal Logo](https://github.com/md-junaid79/chainlit-medical-chatbot/blob/main/cyberheal%20image%20.JPG?raw=true)
 
 CyberHeal is a futuristic medical chatbot designed to provide general information and answer common questions related to health and wellness. It uses the Gemini model from Google's Generative AI to generate responses.
 
